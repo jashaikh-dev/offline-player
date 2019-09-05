@@ -18,6 +18,10 @@ export default {
         right: 0;
         top: 0;
         background: rgba(46, 167, 9, 0.9);
+        background-image: url('./../assets/side-bar-image5.jpeg');
+        background-position: center;
+        background-attachment: stretch;
+
         color: #fff;
     }
 </style>
