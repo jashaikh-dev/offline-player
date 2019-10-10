@@ -1,12 +1,23 @@
 <template>
     <div class="sidebar">
-      <p>sidebar</p>  
+      <div>
+          <button><i class="fas fa-plus" /></button>
+      </div>
+      <ul>
+         <video-list v-for="(video, index) in videoList" 
+            :key="index+video" 
+            :video="video">
+        </video-list>
+      </ul>  
     </div>
 </template>
 
 <script>
+import VideoList from './VideoList' 
 export default {
-    name: 'SideBar'
+    name: 'SideBar',
+    props:["videoList"],
+    components: { VideoList }
 }
 </script>
 

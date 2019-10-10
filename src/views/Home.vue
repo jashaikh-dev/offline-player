@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <SideBar></SideBar>
-    <HelloWorld msg="Offline Player"/>
-
+    <SideBar :video-list="videoList"></SideBar>
   </div>
 </template>
 
@@ -11,7 +9,13 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import SideBar from '@/components/SideBar'
 export default {
-  name: 'home',
+
+  name: 'Home',
+  data(){
+    return{
+      videoList: [`https://www.youtube.com/embed/ya1fwxnmlQs`,`https://www.youtube.com/embed/FOtdgiw2Emo`]
+    }
+  },
   components: {
     HelloWorld,
     SideBar
