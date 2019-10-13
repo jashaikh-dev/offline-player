@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
       <div>
-          <button><i class="fas fa-plus" /></button>
+          <add-video></add-video>
       </div>
       <ul>
          <video-list v-for="(video, index) in videoList" 
@@ -14,10 +14,11 @@
 
 <script>
 import VideoList from './VideoList' 
+import AddVideo from './AddVideo'
 export default {
     name: 'SideBar',
     props:["videoList"],
-    components: { VideoList }
+    components: { VideoList, AddVideo }
 }
 </script>
 
