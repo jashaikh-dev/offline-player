@@ -1,13 +1,14 @@
 <template>
   <div class="home">
+    <VideoPlayer/>
     <SideBar :video-list="videoList"></SideBar>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import SideBar from '@/components/SideBar'
+import VideoPlayer from '@/components/VideoPlayer'
 export default {
 
   name: 'Home',
@@ -17,8 +18,8 @@ export default {
     }
   },
   components: {
-    HelloWorld,
-    SideBar
+    SideBar,
+    VideoPlayer
   }
 }
 </script>
