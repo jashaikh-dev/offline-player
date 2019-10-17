@@ -1,12 +1,13 @@
 <template>
     <div class="sidebar">
       <div>
-          <add-video></add-video>
+          <add-video @addVideo="addVideo"></add-video>
       </div>
       <ul>
          <video-list v-for="(video, index) in videoList" 
             :key="index+video" 
-            :video="video">
+            :video="video"
+            >
         </video-list>
       </ul>  
     </div>
@@ -18,7 +19,13 @@ import AddVideo from './AddVideo'
 export default {
     name: 'SideBar',
     props:["videoList"],
-    components: { VideoList, AddVideo }
+    components: { VideoList, AddVideo },
+    methods:{
+        addVideo(video){
+            this.$emit('addVideo',video)
+        }
+    }
+
 }
 </script>
 

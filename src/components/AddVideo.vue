@@ -34,11 +34,10 @@
                 this.video[name] = value
             },
             onVideoAdd(){
-                console.log(this.video)
+                this.$emit('addVideo', this.video)
+                //console.log(this.video)
             }
-
         }
-
     }
 </script>
 

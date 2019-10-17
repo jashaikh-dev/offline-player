@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <VideoPlayer/>
-    <SideBar :video-list="videoList"></SideBar>
+    <SideBar @addVideo="addVideo" :video-list="videos"></SideBar>
   </div>
 </template>
 
@@ -20,6 +20,17 @@ export default {
   components: {
     SideBar,
     VideoPlayer
+  },
+  computed:{
+    videos(){
+      return this.videoList 
+    }
+  },
+  methods:{
+    addVideo(video){
+      console.log('home: ', video)
+      this.videoList.push(video['video-url'])
+    }
   }
 }
 </script>
