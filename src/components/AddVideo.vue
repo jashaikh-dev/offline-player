@@ -14,7 +14,7 @@
             id="video-url"
             @onTextChange="onTextChange"
         />
-        <button @click="onVideoAdd"> Add </button>
+        <button class="add-button" @click="onVideoAdd"> Add </button>
     </div>
 </template>
 
@@ -45,5 +45,14 @@
 <style lang="less" scoped>
     .add-video-container {
       margin-top: 4px     
+    }
+    .add-button {
+        height: 50px;
+        width: 50%;
+        font-size: 20px;
+        border: none;
+        border-radius: 2px;
+        background: rgba(0,210,90,.6);
+        color: #fff;
     }
 </style>
