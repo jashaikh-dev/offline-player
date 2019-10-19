@@ -4,9 +4,10 @@
           <add-video @addVideo="addVideo"></add-video>
       </div>
       <ul>
-         <video-list v-for="(video, index) in videoList" 
+         <video-list v-for="(video, index) in videos" 
             :key="index+video" 
             :video="video"
+            @playSelectedVideo="playSelectedVideo"
             >
         </video-list>
       </ul>  
@@ -17,12 +18,26 @@
 import VideoList from './VideoList' 
 import AddVideo from './AddVideo'
 export default {
+
     name: 'SideBar',
-    props:["videoList"],
+    data(){
+        return{
+            videoList: [`https://www.youtube.com/embed/ya1fwxnmlQs`,`https://www.youtube.com/embed/FOtdgiw2Emo`]
+        }
+    },
     components: { VideoList, AddVideo },
+    computed:{
+        videos(){
+            return this.videoList 
+        }
+    },
     methods:{
         addVideo(video){
-            this.$emit('addVideo',video)
+            console.log('home: ', video)
+            this.videoList.push(video['video-url'])
+        },
+        playSelectedVideo(selectedVideo){
+            this.$emit('playVideo', selectedVideo)
         }
     }
 

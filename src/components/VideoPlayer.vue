@@ -4,14 +4,15 @@
             class="video-player"
             height="650"
             width="1050" 
-            src="https://www.youtube.com/embed/ya1fwxnmlQs">
+            :src="currentVideo">
         </iframe>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'VideoPlayeer'
+        name: 'VideoPlayeer',
+        props:["currentVideo"]
     }
 </script>
 

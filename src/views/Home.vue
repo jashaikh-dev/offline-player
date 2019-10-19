@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <VideoPlayer/>
-    <SideBar @addVideo="addVideo" :video-list="videos"></SideBar>
+    <VideoPlayer :currentVideo="currentVideo"/>
+    <SideBar @playVideo="playVideo"/>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   name: 'Home',
   data(){
     return{
-      videoList: [`https://www.youtube.com/embed/ya1fwxnmlQs`,`https://www.youtube.com/embed/FOtdgiw2Emo`]
+      selectedVideo: 'https://www.youtube.com/embed/ya1fwxnmlQs'
     }
   },
   components: {
@@ -22,14 +22,13 @@ export default {
     VideoPlayer
   },
   computed:{
-    videos(){
-      return this.videoList 
+    currentVideo(){
+      return this.selectedVideo
     }
   },
-  methods:{
-    addVideo(video){
-      console.log('home: ', video)
-      this.videoList.push(video['video-url'])
+  methods: {
+    playVideo(video){
+      this.selectedVideo = video
     }
   }
 }
