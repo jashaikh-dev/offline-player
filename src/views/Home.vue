@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     playVideo(video){
-      this.selectedVideo = video
+      this.selectedVideo = video['video-url']
     }
   }
 }

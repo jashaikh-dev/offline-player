@@ -1,6 +1,6 @@
 <template>
     <li @click="playThisVideo(video)">
-       <p>{{ video }}</p> 
+       <p>{{ video['video-title'] }}</p> 
     </li>
 </template>
 

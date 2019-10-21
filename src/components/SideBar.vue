@@ -22,7 +22,9 @@ export default {
     name: 'SideBar',
     data(){
         return{
-            videoList: [`https://www.youtube.com/embed/ya1fwxnmlQs`,`https://www.youtube.com/embed/FOtdgiw2Emo`]
+            videoList: [
+                {'video-title':'ORM', 'video-url': `https://www.youtube.com/embed/ya1fwxnmlQs`},
+            {'video-title':"Firebase",'video-url': `https://www.youtube.com/embed/FOtdgiw2Emo`}]
         }
     },
     components: { VideoList, AddVideo },
@@ -34,7 +36,7 @@ export default {
     methods:{
         addVideo(video){
             console.log('home: ', video)
-            this.videoList.push(video['video-url'])
+            this.videoList.push(video)
         },
         playSelectedVideo(selectedVideo){
             this.$emit('playVideo', selectedVideo)
