@@ -31,10 +31,17 @@
         methods: {
             onTextChange(event){
                 const {id, name, value } = event.target
-                this.video[name] = value
+                let whatToSave = value
+                if(name=="video-url"){
+                    const videoId = value.split('=')[1]
+                    whatToSave = `https://www.youtube.com/embed/${videoId}`
+                }
+                this.video[name] = whatToSave
             },
             onVideoAdd(){
                 this.$emit('addVideo', this.video)
+                this.video = {}
+                console.log(this.video)
                 //console.log(this.video)
             }
         }

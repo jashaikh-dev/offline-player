@@ -17,6 +17,8 @@
 
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="less" scoped>
+li{
+    cursor: pointer
+}
 </style>
