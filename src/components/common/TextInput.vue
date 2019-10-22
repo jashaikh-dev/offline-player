@@ -28,6 +28,7 @@
 .text-input-container {
     height: 50px;
     padding: 2px;
+    width: 80%;
     & > .text-input {
         width: 80%;
         height: 40px;

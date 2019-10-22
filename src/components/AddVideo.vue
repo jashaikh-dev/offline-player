@@ -50,11 +50,15 @@
 
 <style lang="less" scoped>
     .add-video-container {
-      margin-top: 4px     
+      margin-top: 4px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;   
     }
     .add-button {
-        height: 50px;
-        width: 50%;
+        height: 45px;
+        width: 80%;
         font-size: 20px;
         border: none;
         border-radius: 2px;
